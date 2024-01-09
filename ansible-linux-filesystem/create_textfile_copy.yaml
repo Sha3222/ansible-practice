@@ -2,11 +2,11 @@
 - name: create a text-file with copy module
   hosts: all
   vars:
-    file-name: "/home/superheros.txt"
+    name: "/home/superheros.txt"
   tasks:
     - name: text file with copy module
       ansible.builtin.copy:
-        dest: "{{ file-name }}"
+        dest: "{{ name }}"
         content:
           Ironman
           Captian America
