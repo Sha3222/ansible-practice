@@ -1,0 +1,9 @@
+---
+- name : "Creating an empty file"
+  hosts: all
+  become: true
+  tasks:
+    - name: using path module to create an file
+      file:
+       path: /home/sha
+       state: touch
