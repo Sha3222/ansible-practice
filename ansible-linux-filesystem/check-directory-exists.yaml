@@ -7,7 +7,7 @@
     - name: Checking directory exists with stat module
       ansible.builtin.stat:
         path: "{{ dir }}"
-        register: dir_data
+      register: dir_data
 
     - name: print me the message if the directory exists
       ansible.builtin.debug:
