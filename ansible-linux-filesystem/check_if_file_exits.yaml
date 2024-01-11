@@ -2,7 +2,7 @@
 - name: check if a file exist
   hosts: all
   vars:
-    a: /home/superheros
+    a: /home/superheros.txt
   tasks:
     - name: check if the file exist
       ansible.builtin.stat:
