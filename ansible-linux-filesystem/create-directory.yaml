@@ -1,8 +1,13 @@
 ---
 - name: create a directory
   hosts: all
+  vars:
+    dir: /home/Hero
   tasks:
     - name: creating a directory using file module
       ansible.builtin.file:
-        path: /home/Hero's
+        path: "{{ dir }}"
         state: directory
+        owner: sha
+        group: students
+        mode: '744'
