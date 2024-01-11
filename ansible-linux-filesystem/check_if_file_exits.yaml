@@ -12,9 +12,9 @@
     - name: print me the message if file exists
       ansible.builtin.debug:
         msg : "The file {{a}} exists"
-      when: file_data.stat.exist
+      when: file_data.stat.exists
 
     - name: print me the message if file does not exists
       ansible.builtin.debug:
         msg: "The file {{a}} does not exists"
-      when: not file_data.stat.exist
+      when: not file_data.stat.exists
