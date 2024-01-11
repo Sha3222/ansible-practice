@@ -5,4 +5,4 @@
     - name: creating a directory using file module
       ansible.builtin.file:
         path: /home/Hero's
-        state: Directory
+        state: directory
