@@ -1,0 +1,21 @@
+---
+- name: To check the Directory
+  hosts: all
+  vars:
+    dir: "/home/Hero"
+  tasks:
+    - name: Checking directory exists with stat module
+      ansible.builtin.stat:
+        path: "{{ dir }}"
+        register: dir_data
+
+    - name: print me the message if the directory exists
+      ansible.builtin.debug:
+        msg: "This {{ dir }} directory exist"
+      when: dir_data.stat.exists
+
+    - name: print me the message if the directory does not exists
+      ansible.builtin.debug:
+        msg: "This {{ dir }} directory does not exits"
+      when: not dir_data.stat.exists
+
