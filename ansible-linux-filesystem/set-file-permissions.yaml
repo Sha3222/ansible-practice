@@ -14,4 +14,4 @@
         path: "{{ file-name }}"
         owner: centos
         group: centos
-        mode: 0744
+        mode: 744
