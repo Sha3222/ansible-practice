@@ -1,0 +1,22 @@
+---
+- name: rename the file
+  hosts: all
+  vars:
+    sr: /home/superheros.txt
+    des: /home/super-heros.txt
+  tasks:
+    - name: using stat module
+      ansible.builtin.stat:
+        path: "{{ sr }}"
+      register: file-data
+    - name: using copy module
+      ansible.builtin.copy:
+        src: "{{ sr }}"
+        dest: "{{ des }}"
+      when: file-data.stat.exists
+
+    - name: Remove the the file
+      ansible.builtin.file:
+        file:
+          path: "{{ sr }}"
+          state: absent
