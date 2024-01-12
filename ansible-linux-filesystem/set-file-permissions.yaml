@@ -1,0 +1,17 @@
+---
+- name: To set file access
+  hosts: all
+  vars:
+    file-name: /home/file1.sh
+  tasks:
+    - name: "keeping few shell scripting code"
+      ansible.builtin.copy:
+        path: "{{ file-name }}"
+      content:
+        echo "Hi, this is shell script"
+    - name: "set access"
+      ansible.builtin.file:
+        path: "{{ file-name }}"
+        owner: centos
+        group: centos
+        mode: 0744
