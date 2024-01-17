@@ -3,7 +3,7 @@
   hosts: all
   vars:
     mylinks: "~/link"
-    myfile: "~/examole.txt"
+    myfile: "~/example.txt"
   tasks:
     - name: creating link
       ansible.builtin.file:
