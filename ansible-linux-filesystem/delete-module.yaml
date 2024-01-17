@@ -1,0 +1,10 @@
+---
+- name: "This module is to delete the file / directory"
+  hosts: all
+  var:
+    b = /home/superheros
+  tasks:
+    - name: To delete the file
+      ansible.builtin.file:
+        path: "{{ b }}"
+        state: absent
