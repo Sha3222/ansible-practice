@@ -1,0 +1,12 @@
+---
+- name: symbolic-link
+  hosts: all
+  vars:
+    mylinks: "~/link"
+    myfile: "~/examole.txt"
+  tasks:
+    - name: creating link
+      ansible.builtin.file:
+        src: "{{ mylinks }}"
+        dest: "{{ myfile }}"
+        state: link
